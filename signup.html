@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <script type="text/javascript" src="js/signup.js">
+
+  </script>
+  <title>註冊</title>
+</head>
+
+<body>
+  <main class="signup">
+    <section>
+      <form class="" action="signup.php" method="post" onsubmit="return check()">
+        <section class="inpcs">
+          電子信箱：<br>
+          <input type="email" name="email" id="email" value="" onchange="checkmail()">
+          <p id="checkmail">
+            <!--請輸入正確的電子信箱-->
+          </p>
+          密碼：<br>
+          <input type="password" name="pwd" id="pwd" value="" onchange="checkpwd()"><br>
+          <p id="checkpwd">
+            <!--密碼需介於1~12個字中間-->
+          </p>
+          確認密碼：<br>
+          <input type="password" name="" value="" id="pwdc" onchange="checkpwdc()"><br>
+          <p id="checkpwdc">
+            <!--兩次密碼不相符-->
+          </p>
+          姓名：<br>
+          <input type="text" name="username" id="username" value="" onchange="checkname()"><br>
+          <p id="checkname">
+            <!--請輸入姓名-->
+          </p>
+          電話：<br>
+          <input type="text" name="phone" id="phone" value="" onchange="checkphone()">
+          <p id="checkphone">
+            <!--電話格式錯誤-->
+          </p>
+        </section>
+        <section class="btncs">
+          <button type="submit" name="signupbtn" id="signupbtn">註冊</button>
+          <button type="reset" name="rebtn">重設</button>
+        </section>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

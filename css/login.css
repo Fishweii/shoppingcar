@@ -1,0 +1,61 @@
+body{
+  background-color: #E1E1E1;
+}
+
+.login{
+  margin: auto;
+  width: 600px;
+  box-sizing: border-box;
+}
+.login>section{
+  background-color: #FFF2DC;
+  height: 500px;
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.inpcs{
+  margin-bottom: 25px;
+}
+.signup{
+  margin: auto;
+  width: 600px;
+  box-sizing: border-box;
+}
+.signup>section{
+  background-color: #FFF2DC;
+  height: 500px;
+  text-align: center;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#loginbtn{
+  margin-right: 30px;
+}
+input{
+  width:300px;
+}
+button{
+  width: 200px;
+}
+a{
+  text-decoration: none;
+}
+.btncs{
+  display: inline;
+}
+
+.btnse{
+
+}
+.btnse button,{
+  width: 150px;
+}
+
+.membertable button{
+  width: 100px;
+}

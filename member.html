@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>會員資料管理</title>
+  <link rel="stylesheet" type="text/css" href="css/login.css">
+  <script type="text/javascript" src="js/getmember.js">
+
+  </script>
+</head>
+
+<body>
+  <main class="signup">
+    <section class="inpcs">
+      <table class="membertable" id="membertable">
+        <tr>
+          <td>電子信箱：</td>
+          <td id="showemail">account</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>密碼：</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>姓名：</td>
+          <td id="showname">name</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>電話：</td>
+          <td id="showphone">phone</td>
+          <td>
+            <!--<button type="button" name="button">修改</button>-->
+          </td>
+        </tr>
+        <tr>
+          <td><button type="button" name="button" onclick="golist()">回到商品清單</button></td>
+          <td></td>
+          <td><button type="button" name="button" onclick="showupdate()">修改會員資料</button></td>
+        </tr>
+      </table>
+      <form class="" id="memberform" action="updatemem.php" method="post" onsubmit="return check()" style="display:none;">
+        <section class="inpcs">
+          電子信箱：<br>
+
+          <p id="email">
+            <!--請輸入正確的電子信箱-->
+          </p>
+          密碼：<br>
+          <input type="password" name="pwd" id="pwd" value="" onchange="checkpwd()"><br>
+          <p id="checkpwd">
+            <!--密碼需介於1~12個字中間-->
+          </p>
+          確認密碼：<br>
+          <input type="password" name="" value="" id="pwdc" onchange="checkpwdc()"><br>
+          <p id="checkpwdc">
+            <!--兩次密碼不相符-->
+          </p>
+          姓名：<br>
+          <input type="text" name="username" id="username" value="" onchange="checkname()"><br>
+          <p id="checkname">
+            <!--請輸入姓名-->
+          </p>
+          電話：<br>
+          <input type="text" name="phone" id="phone" value="" onchange="checkphone()">
+          <p id="checkphone">
+            <!--電話格式錯誤-->
+          </p>
+        </section>
+        <section class="btncs">
+          <button type="submit" name="updatebtn" id="updatebtn">更新</button>
+          <button type="button" name="celbtn" onclick="remem()">取消</button>
+        </section>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>
