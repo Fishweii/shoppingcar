@@ -16,7 +16,7 @@ function getInfo() {
             let goodsitem = document.createElement('tr');
             goodsitem.setAttribute('id','goods'+ (i + 1));
             let str = "";
-            str += "<td>"+data['goodsinfo'][i]['name']+"</td>"
+            str += "<td>"+data['goodsinfo'][i]['goodsname']+"</td>"
             +"<td>"+data["goodsinfo"][i]["stock"]+"</td><td>"+data["goodsinfo"][i]["prices"]
             +"</td><td><button type='button' name='button' id = '" + (i + 1) + "' onclick = 'addcart(this.id)'>加入購物車</button></td>";
             goodslist.appendChild(goodsitem);

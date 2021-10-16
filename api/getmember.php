@@ -12,8 +12,9 @@ if(!isset($_SESSION['users'])){
   echo $response;
   die();
 }else{
-  $sql = "SELECT * FROM members where email = '".$_SESSION["users"]."'";
-  $result = execute_sql($link, 'shoppingcart', $sql);
+  $sql = "SELECT * FROM members where email = ?/*'".$_SESSION["users"]."'*/";
+  $result = execute_sql($link, /*'shoppingcart', */$sql);
+  $result -> execute(array($_SESSION['users']));
   if(!$result){
     $json = [
       'ok' => false,
@@ -23,23 +24,25 @@ if(!isset($_SESSION['users'])){
     $response = json_encode($json);
     echo $response;
     die();
-    }else{
-      $array = [];
+  }else{
+      /*$array = [];
       $row = mysqli_fetch_assoc($result);
       array_push($array,[
         'email' => $row['email'],
         'pwd' => $row['password'],
         'name' => $row['username'],
         'phone' => $row['phone']
-      ]);
-    }
+      ]);*/
+      $row = $result -> fetch(PDO::FETCH_ASSOC);
       $json = [
         'ok' => true,
-        'memberinfo' => $array,
+        'memberinfo' => $row/*$array*/,
         'member' => true
       ];
       $response = json_encode($json, JSON_UNESCAPED_UNICODE);
       echo $response;
       die();
+
     }
+}
  ?>

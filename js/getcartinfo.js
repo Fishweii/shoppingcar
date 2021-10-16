@@ -17,20 +17,20 @@ function getInfo() {
           for(let i = 0;i < carts.length; i++){
             let cartslist = document.getElementById('cartslist');
             let cartsitem = document.createElement('tr');
-            cartsitem.setAttribute('id','carts'+ (data['cartsinfo'][i]['infoid']));
+            cartsitem.setAttribute('id','carts'+ (data['cartsinfo'][i]['info_id']));
             let str = "";
             str += "<td>"+data['cartsinfo'][i]['goodsname']+"</td><td><select id="+data['cartsinfo'][i]['goodsid']+" onchange='newamount(this.id)'>";
-            for(let j = 1;j <= data['cartsinfo'][i]['goodstock']; j++){
+            for(let j = 1;j <= data['cartsinfo'][i]['stock']; j++){
               if(j != data['cartsinfo'][i]['amount']){
                 str += "<option value='" + j + "'>" + j +"</option>";
               }else{
                 str += "<option value='" + j + "' selected>" + j +"</option>";
               }
             }
-            str += "</select></td><td id='price"+data['cartsinfo'][i]['goodsid']+"'>"+data['cartsinfo'][i]['prices']
-            +"</td><td><button type='button' name='button' id = '" + (data['cartsinfo'][i]['infoid']) + "' onclick = 'deletegood(this.id)'>移除商品</button></td>";
+            str += "</select></td><td id='price"+data['cartsinfo'][i]['goodsid']+"'>"+data['cartsinfo'][i]['total']
+            +"</td><td><button type='button' name='button' id = '" + (data['cartsinfo'][i]['info_id']) + "' onclick = 'deletegood(this.id)'>移除商品</button></td>";
             cartslist.appendChild(cartsitem);
-            document.getElementById('carts'+ (data['cartsinfo'][i]['infoid'])).innerHTML = str;
+            document.getElementById('carts'+ (data['cartsinfo'][i]['info_id'])).innerHTML = str;
           }
           let totalprices = 0;
           for(let i = 0;i < carts.length; i++){

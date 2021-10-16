@@ -12,12 +12,12 @@ function getInfo() {
         }else{
           let email = document.getElementById('showemail');
           let email2 = document.getElementById('email');
-          email.innerHTML = data['memberinfo'][0]['email'];
-          email2.innerHTML = data['memberinfo'][0]['email'];
+          email.innerHTML = data['memberinfo']['email'];
+          email2.innerHTML = data['memberinfo']['email'];
           let name = document.getElementById('showname');
-          name.innerHTML = data['memberinfo'][0]['name'];
+          name.innerHTML = data['memberinfo']['username'];
           let phone = document.getElementById('showphone');
-          phone.innerHTML = data['memberinfo'][0]['phone'];
+          phone.innerHTML = data['memberinfo']['phone'];
         }
     }
 }
